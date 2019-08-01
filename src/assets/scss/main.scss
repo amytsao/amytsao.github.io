@@ -1,0 +1,363 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400italic");
+
+@import "libs/skel";
+
+@include skel-breakpoints((
+	xlarge: '(max-width: 1800px)',
+	large: '(max-width: 1280px)',
+	medium: '(max-width: 980px)',
+	small: '(max-width: 736px)',
+	xsmall: '(max-width: 480px)'
+));
+
+@include skel-layout((
+	reset: 'full',
+	boxModel: 'border',
+	grid: ( gutters: 2.5em ),
+	conditionals: true,
+	containers: true,
+	breakpoints: (
+		large: (
+			grid: (
+				gutters: 2em
+			),
+		),
+		small: (
+			grid: (
+				gutters: 1.5em
+			),
+		)
+	)
+));
+
+html {
+	scroll-behavior: smooth;
+}
+
+body, input, select, textarea {
+	color: #666;
+	font-family: _font(family);
+	font-size: 16pt;
+	font-weight: _font(weight);
+	line-height: 1.75em;
+}
+
+a {
+	@include vendor('transition', ('color #{_duration(transition)} ease-in-out', 'border-color #{_duration(transition)} ease-in-out'));
+	border-bottom: dotted 1px;
+	color: #6f42c1;
+	text-decoration: none;
+
+	a:hover, a:focus, a:active {
+		border-bottom-color: transparent;
+		color: #4e2d89;
+		text-decoration: none;
+	}
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 _size(element-margin) 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	line-height: 1em;
+	margin: 0 0 1em 0;
+}
+
+/* header */
+.social-icons a {
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #fff;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  margin-right: 1rem;
+
+  &:last-child {
+  	margin-bottom: 0;
+  }
+
+  &:active, &:focus, &:hover {
+  	border-style: dotted;
+  	color: #53a7ea;
+  }
+}
+
+header .navbar-nav .nav-item .nav-link {
+	color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  padding: .4rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:active, &:focus, &:hover
+	{
+	   box-shadow: inset 0 0 0 25px #53a7ea;
+	}
+}
+
+header .navbar-toggler:focus {
+  outline-color: #9b7cd4;
+}
+
+header {
+	background: #6f42c1;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 17rem;
+  height: 100vh;
+
+  .navbar-nav {
+  	margin-bottom: 2rem;
+  }
+}
+header .navbar-brand {
+	display: flex;
+  flex-direction: column;
+  margin: 10rem 0 1rem;
+  padding: 0.5rem;
+
+  h2 {
+  	color: #fff;
+  	font-size: 2rem;
+  }
+}
+header .navbar-brand .img-profile {
+  max-width: 10rem;
+  max-height: 10rem;
+  border: 0.5rem solid rgba(255, 255, 255, 0.2);
+}
+
+#main {
+	width: calc(100vw - 17rem);
+	margin-left: 17rem;
+
+	> section {
+		border-top: dashed 2px #aaa;
+		padding: 3rem;
+
+		&:first-child {
+			background-color:#fff;
+			background-image: radial-gradient(#fef 5%, transparent 1%),
+			radial-gradient(#fef 5%, transparent 1%);
+			background-size: 100px 100px;
+			background-position: 0 0, 50px 50px;
+			border: none;
+			color: #2d3561;
+			height: 100vh;
+	    display: flex;
+	    align-items: center;
+	    flex-direction: column;
+	    justify-content: center;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+
+	/* The typing effect */
+	@keyframes typing {
+	  from { width: 0 }
+	  to { width: 100% }
+	}
+
+	/* The typewriter cursor effect */
+	@keyframes blink-caret {
+	  from, to { border-color: transparent }
+	  50% { border-color: orange }
+	}
+}
+
+.image {
+	border-radius: 2rem;
+	border: 0;
+	display: inline-block;
+	position: relative;
+
+	&:before {
+		@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+		background: url('images/overlay.png');
+		border-radius: _size(border-radius);
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	&.thumb {
+		text-align: center;
+
+		&:after {
+			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+			border-radius: _size(border-radius);
+			border: solid 3px rgba(255,255,255,0.5);
+			color: #fff;
+			content: 'View';
+			display: inline-block;
+			font-size: 0.8em;
+			font-weight: _font(weight-bold);
+			left: 50%;
+			line-height: 2.25em;
+			margin: -1.25em 0 0 -3em;
+			opacity: 0;
+			padding: 0 1.5em;
+			position: absolute;
+			text-align: center;
+			text-decoration: none;
+			top: 50%;
+			white-space: nowrap;
+		}
+
+		&:hover {
+			&:after {
+				opacity: 1.0;
+			}
+
+			&:before {
+				background: url('images/overlay.png'), url('images/overlay.png');
+				opacity: 1.0;
+			}
+		}
+	}
+
+	img {
+		border-radius: _size(border-radius);
+		display: block;
+	}
+
+	&.fit {
+		display: block;
+		margin: 0 0 _size(element-margin) 0;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+.work-item {
+	margin: 0 0 _size(element-margin) 0;
+
+	.image {
+		margin: 0 0 (_size(element-margin) * 0.75) 0;
+		height: 12rem;
+		overflow: hidden;
+	}
+
+	h3 {
+		font-size: 1em;
+		margin: 0 0 (_size(element-margin) * 0.25) 0;
+	}
+
+	p {
+		font-size: 0.8em;
+		line-height: 1.5em;
+		margin: 0;
+	}
+}
+
+@include keyframes('spin') {
+	0% { @include vendor('transform', 'rotate(0deg)'); }
+	100% { @include vendor('transform', 'rotate(360deg)'); }
+};
+
+/* ghostie */
+
+.container {
+  position: absolute;
+  bottom: 10%;
+  left: 80%;
+}
+
+.ghost {
+  animation: float 3s ease-out infinite;
+}
+
+@keyframes float {
+  50% {
+     transform: translate(0, 20px);
+  }
+}
+.shadowFrame {
+  width: 130px;
+  margin-top: 15px;
+}
+.shadow {
+  animation: shrink 3s ease-out infinite;
+  transform-origin: center center;
+  ellipse {
+    transform-origin: center center;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 90%;
+    margin: 0 5%;
+  }
+  50% {
+    width: 60%;
+    margin: 0 18%;
+  }
+  100% {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+/* responsive */
+
+@include breakpoint(medium) {
+	header {
+		background: #6f42c1;
+		position: initial;
+		width: 100%;
+		height: auto;
+		text-align: center;
+		padding: 2rem;
+
+		h2 {
+			color: #fff;
+			font-size: 2rem;
+		}
+
+		.navbar-nav {
+			margin-bottom: 1rem;
+		}
+
+		.navbar-brand {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.navbar-brand .img-profile {
+			max-width: 100px;
+			max-height: 100px;
+		}
+	}
+
+	#main {
+		width: 100%;
+		margin: 2rem auto;
+	}
+}
