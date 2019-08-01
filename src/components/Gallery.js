@@ -1,41 +1,35 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
 class Gallery extends Component {
-    renderGallery (images) {
-        if (!images) return;
+  renderGallery(images) {
+    if (!images) return;
 
-        const gallery = images.map((obj, i) => {
-            return (
-                <article className="6u 12u$(xsmall) work-item" key={i}>
-                    <a className="image fit thumb" href={obj.source}>
-                        <img src={obj.thumbnail} />
-                    </a>
-                    <h3>{obj.caption}</h3>
-                    <p>{obj.description}</p>
-                </article>
-            );
-        });
+    const gallery = images.map((obj, i) => {
+      return (
+        <article className="6u 12u$(xsmall) work-item" key={i}>
+          <a className="image fit thumb" href={obj.source}>
+            <img src={obj.thumbnail} />
+          </a>
+          <h3>{obj.caption}</h3>
+          <p>{obj.description}</p>
+        </article>
+      );
+    });
 
-        return (
-            <div className="row">{gallery}</div>
-        );
-    }
-    render () {
-        const { images } = this.props;
+    return <div className="row">{gallery}</div>;
+  }
+  render() {
+    const { images } = this.props;
 
-        return (
-            <div>
-                {this.renderGallery(images)}
-            </div>
-        );
-    }
+    return <div>{this.renderGallery(images)}</div>;
+  }
 }
 
-Gallery.displayName = 'Gallery';
+Gallery.displayName = "Gallery";
 Gallery.propTypes = {
-    images: PropTypes.array
+  images: PropTypes.array
 };
 
 export default Gallery;
