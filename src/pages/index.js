@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import Fade from 'react-reveal/Fade';
 
 import Layout from "../components/layout";
 import Gallery from "../components/Gallery";
@@ -71,34 +72,38 @@ class HomeIndex extends React.Component {
         </Helmet>
 
         <div id="main">
-          <section id="one">
-            <h2>
-              About Amy
-              <br />
-            </h2>
-            <div>
-              Web developer, mobile game addict, aspiring pun master.
-              <br />
-              Here to pet all the dogs.
-            </div>
-            <Ghostie />
-          </section>
+            <section id="one">
+              <Fade bottom>
+                <h2>
+                  About Amy
+                  <br />
+                </h2>
+                <div>
+                  Web developer, mobile game addict, aspiring pun master.
+                  <br />
+                  Here to pet all the dogs.
+                </div>
+              </Fade>
+              <Ghostie />
+            </section>
 
-          <section id="two">
-            <a name="projects">
-              <h2>Recent Projects</h2>
-            </a>
-            <Gallery
-              images={DEFAULT_IMAGES.map(
-                ({ id, source, thumbnail, caption, description }) => ({
-                  source,
-                  thumbnail,
-                  caption,
-                  description
-                })
-              )}
-            />
-          </section>
+            <section id="two">
+              <Fade bottom>
+              <a name="projects">
+                <h2>Recent Projects</h2>
+              </a>
+              </Fade>
+              <Gallery
+                images={DEFAULT_IMAGES.map(
+                  ({ id, source, thumbnail, caption, description }) => ({
+                    source,
+                    thumbnail,
+                    caption,
+                    description
+                  })
+                )}
+              />
+            </section>
         </div>
       </Layout>
     );
