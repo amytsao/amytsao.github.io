@@ -1,8 +1,7 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Hunter Chang",
+  "name": "website",
+  "description": "Amy Tsao's Portfolio",
+  "homepage": "https://amytsao.github.io",
   "dependencies": {
     "gatsby": "^2.2.9",
     "gatsby-plugin-manifest": "^2.0.24",
@@ -22,6 +21,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "deploy:github": "npm run build && node ./scripts/deploy-github",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
