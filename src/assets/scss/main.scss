@@ -339,6 +339,7 @@ header .navbar-brand .img-profile {
 		.navbar-brand {
 			display: flex;
 			flex-direction: column;
+      margin: 2rem;
 		}
 
 		.navbar-brand .img-profile {
@@ -351,4 +352,12 @@ header .navbar-brand .img-profile {
 		width: 100%;
 		margin: 2rem auto;
 	}
+
+  .container {
+    position: initial;
+  }
+
+  .work-item .image {
+    height: auto;
+  }
 }
