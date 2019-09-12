@@ -60,7 +60,7 @@ body {
   flex: 1;
   position: relative;
   cursor: pointer;
-  margin-top: 10%;
+  margin-top: 3rem;
 }
 .card {
   border: 1px solid #ccc;
@@ -74,6 +74,7 @@ body {
   right: 0;
   margin: 0 auto;
   width: 80%;
+  max-width: 750px;
   height: 600px;
   transition: 0.1s;
 
