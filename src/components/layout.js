@@ -26,7 +26,7 @@ const Template = props => {
   ];
 
   return (
-    <div>
+    <div className="page-container">
       <div className="pager">
         <Pager count={3} selected={idx} onSelect={setIndex} cards={cards} />
       </div>
