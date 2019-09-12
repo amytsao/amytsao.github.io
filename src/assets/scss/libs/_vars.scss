@@ -1,23 +1,10 @@
-$duration: (
-	transition:			0.2s
-);
+$transition: 0.2s;
+$border-radius: 0.35em;
+$element-height: 2.75em;
+$element-margin: 2em;
 
-$size: (
-	border-radius:		0.35em,
-	element-height:		2.75em,
-	element-margin:		2em
-);
-
-$font: (
-	family:				('Roboto Condensed', Helvetica, sans-serif),
-	family-fixed:		('Courier New', monospace),
-	weight:				400,
-	weight-bold:		400
-);
-
-$altfont: (
-  family:       ('Amatic SC', Helvetica, sans-serif),
-  family-fixed:   ('Courier New', monospace),
-  weight:       400,
-  weight-bold:    400
-);
+$family: ("Roboto Condensed", Helvetica, sans-serif);
+$family-fixed: ("Courier New", monospace);
+$weight: 400;
+$weight-bold: 40;
+$alt-family: ("Amatic SC", Helvetica, sans-serif);

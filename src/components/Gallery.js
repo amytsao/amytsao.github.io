@@ -1,38 +1,74 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import Carousel, { Modal, ModalGateway } from "react-images";
-import Slide from 'react-reveal/Slide';
+import React from "react";
 
-class Gallery extends Component {
-  renderGallery(images) {
-    if (!images) return;
+import cornerstone from "../assets/images/sites/cornerstone.png";
+import ida from "../assets/images/sites/ida.png";
+import ford from "../assets/images/sites/ford.jpg";
+import hci from "../assets/images/sites/hci.jpeg";
+// import fastaff from "../assets/images/sites/fastaff.jpeg";
+// import ua from "../assets/images/sites/ua.jpeg";
 
-    const gallery = images.map((obj, i) => {
-      return (
-        <Slide bottom>
-            <article className="work-item" key={i}>
-              <a className="image fit thumb" href={obj.source}>
-                <img src={obj.thumbnail} />
-              </a>
-              <h3>{obj.caption}</h3>
-              <p>{obj.description}</p>
-            </article>
-        </Slide>
-      );
-    });
-
-    return <div className="row">{gallery}</div>;
+const DEFAULT_IMAGES = [
+  {
+    id: "1",
+    source: "https://csod.com",
+    thumbnail: cornerstone,
+    caption: "Cornerstone Ondemand",
+    description:
+      "Rebuilt site with team with new technologies such as React, Gatsby, Netlify, and Sanity."
+  },
+  {
+    id: "2",
+    source: "https://www.documentary.org/",
+    thumbnail: ida,
+    caption: "IDA Documentary",
+    description:
+      "Wrote custom scripts to help with ease of access of site as well as theming"
+  },
+  {
+    id: "3",
+    source: "https://www.fordtheatres.org/",
+    thumbnail: ford,
+    caption: "Ford Theatres",
+    description: "Setup and front page theming"
+  },
+  {
+    id: "4",
+    source: "https://healthy.ucla.edu/",
+    thumbnail: hci,
+    caption: "Healthy Campus Initiative - UCLA",
+    description: "Designed and created the site using Wordpress and custom PHP."
   }
-  render() {
-    const { images } = this.props;
+];
 
-    return <div>{this.renderGallery(images)}</div>;
-  }
-}
+const images = DEFAULT_IMAGES.map(
+  ({ id, source, thumbnail, caption, description }) => ({
+    source,
+    thumbnail,
+    caption,
+    description
+  })
+);
+
+const renderGallery = images => {
+  if (!images) return;
+
+  const gallery = images.map((obj, i) => {
+    return (
+      <a className="image fit thumb work-item" href={obj.source}>
+        <img alt="project" src={obj.thumbnail} />
+        <h3>{obj.caption}</h3>
+        <p>{obj.description}</p>
+      </a>
+    );
+  });
+
+  return <div className="gallery-row">{gallery}</div>;
+};
+
+const Gallery = () => {
+  return <div>{renderGallery(images)}</div>;
+};
 
 Gallery.displayName = "Gallery";
-Gallery.propTypes = {
-  images: PropTypes.array
-};
 
 export default Gallery;

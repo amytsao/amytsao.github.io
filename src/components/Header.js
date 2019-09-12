@@ -6,7 +6,7 @@ import avatar from "../assets/images/avatar.jpg";
 class Header extends React.Component {
   render() {
     return (
-      <header className="navbar" id="sideNav">
+      <header className="navbar">
         <div className="navbar-brand">
           <h2>Amy Tsao</h2>
           <div>
@@ -15,7 +15,7 @@ class Header extends React.Component {
         </div>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="#About">
               About
             </a>
           </li>

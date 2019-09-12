@@ -15,7 +15,7 @@ class Ghostie extends React.Component {
           width="127.433px"
           height="132.743px"
           viewBox="0 0 127.433 132.743"
-          enable-background="new 0 0 127.433 132.743"
+          enableBackground="new 0 0 127.433 132.743"
           xmlSpace="preserve"
         >
           <path
@@ -49,7 +49,7 @@ class Ghostie extends React.Component {
             width="122.436px"
             height="39.744px"
             viewBox="0 0 122.436 39.744"
-            enable-background="new 0 0 122.436 39.744"
+            enableBackground="new 0 0 122.436 39.744"
             xmlSpace="preserve"
           >
             <ellipse
