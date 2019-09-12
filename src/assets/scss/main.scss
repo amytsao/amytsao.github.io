@@ -64,8 +64,7 @@ body {
   flex: 1;
   position: relative;
   cursor: pointer;
-  margin-top: 3rem;
-  min-height: 100vh;
+  min-height: 600px;
 }
 .card {
   border: 1px solid #ccc;
@@ -311,7 +310,8 @@ h6 {
 
 .about-me {
   max-width: 400px;
-  margin: 50px;
+  margin: 0 auto;
+  padding: 50px;
 }
 
 #footer {
@@ -330,6 +330,7 @@ h6 {
 
   .card-container {
     margin-bottom: 7rem;
+    min-height: 100vh;
   }
 
   .container {
