@@ -27,6 +27,7 @@ const Template = props => {
 
   return (
     <div className="page-container">
+      <title>Amy Tsao | Web Developer</title>
       <div className="pager">
         <Pager count={3} selected={idx} onSelect={setIndex} cards={cards} />
       </div>
@@ -38,7 +39,8 @@ const Template = props => {
             style={{
               transform: interpolate(
                 [props.translate, props.rotate],
-                (t, rot) => `translate3d(${t}px,0,0) rotate(${rot}deg)`
+                (t, rot) =>
+                  `translate3d(${t}px,${t}px,${t}px) rotate(${rot}deg)`
               )
             }}
           >
