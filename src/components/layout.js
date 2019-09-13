@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { useTransition, interpolate } from "react-spring";
+import { Helmet } from "react-helmet";
 import "../assets/scss/main.scss";
 
 import Footer from "./Footer";
@@ -27,7 +28,10 @@ const Template = props => {
 
   return (
     <div className="page-container">
-      <title>Amy Tsao | Web Developer</title>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Amy Tsao</title>
+      </Helmet>
       <div className="pager">
         <Pager count={3} selected={idx} onSelect={setIndex} cards={cards} />
       </div>
