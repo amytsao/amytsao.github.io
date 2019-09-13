@@ -1,7 +1,7 @@
 import React from "react";
 import {
   FaEnvelopeSquare,
-  FaFacebookF,
+  FaInstagram,
   FaGithubAlt,
   FaLinkedinIn
 } from "react-icons/fa";
@@ -21,8 +21,8 @@ class Footer extends React.Component {
             <a href="https://github.com/amytsao" alt="github">
               <FaGithubAlt />
             </a>
-            <a href="https://www.facebook.com/amy.tsao.9" alt="facebook">
-              <FaFacebookF />
+            <a href="https://www.instagram.com/ariie_tea/" alt="instagram">
+              <FaInstagram />
             </a>
             <a href="mailto:amy.tsao227@gmail.com" alt="email">
               <FaEnvelopeSquare />
