@@ -1,0 +1,14 @@
+.grid {
+  columns: 250px;
+  column-gap: 20px;
+}
+
+.grid-item {
+  break-inside: avoid-column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.album {
+  margin-bottom: 20px;
+}

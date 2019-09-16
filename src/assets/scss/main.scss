@@ -29,6 +29,7 @@ body {
   padding-bottom: 30px;
 }
 
+button,
 .box {
   width: 180px;
   background-color: #ccc;
@@ -353,5 +354,34 @@ h6 {
 
   .gallery-row {
     flex-direction: column;
+  }
+}
+
+/* loading screen */
+@keyframes loading-dots {
+  50% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loading-dots {
+  text-align: center;
+  div {
+    background: #377;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 8px;
+    border-radius: 100%;
+    animation: loading-dots 1s -0.5s infinite linear;
+
+    &:nth-child(2n-1) {
+      animation-delay: -0.35s;
+    }
   }
 }
