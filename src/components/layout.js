@@ -3,7 +3,7 @@ import "../assets/scss/main.scss";
 
 import Footer from "./Footer";
 
-const Template = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="page-container">
       {children}
@@ -12,4 +12,4 @@ const Template = ({ children }) => {
   );
 };
 
-export default Template;
+export default Layout;

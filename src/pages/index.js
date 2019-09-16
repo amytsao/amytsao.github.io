@@ -10,7 +10,7 @@ const HomeIndex = props => {
   const [idx, setIndex] = useState(0);
   // const items = [{}, {}, {}];
   const onClick = useCallback(() => {
-    setIndex(i => (i + 1) % 3);
+    setIndex(i => (i + 1) % 4);
   }, [setIndex]);
   const transitions = useTransition(idx, i => i, {
     initial: null,
@@ -22,7 +22,8 @@ const HomeIndex = props => {
   const cards = [
     { title: "Hi!", component: "About" },
     { title: "About Me", component: "AboutMe" },
-    { title: "Recent Projects", component: "Gallery" }
+    { title: "Recent Projects", component: "Gallery" },
+    { title: "Photos", component: null }
   ];
   return (
     <Layout>
@@ -31,7 +32,7 @@ const HomeIndex = props => {
         <meta name="description" content="Web Developer" />
       </Helmet>
       <div className="pager">
-        <Pager count={3} selected={idx} onSelect={setIndex} cards={cards} />
+        <Pager count={4} selected={idx} onSelect={setIndex} cards={cards} />
       </div>
       <div className="card-container" onClick={onClick}>
         {transitions.map(({ item, props, key }) => (

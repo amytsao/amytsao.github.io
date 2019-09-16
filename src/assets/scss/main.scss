@@ -49,6 +49,11 @@ button,
     border: 3px solid #101;
     cursor: grab;
   }
+
+  a {
+    border: none;
+    color: #377;
+  }
 }
 
 .box.selected-box {
