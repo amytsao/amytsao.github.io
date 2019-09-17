@@ -10,11 +10,7 @@ const Pager = ({ count, selected, cards, onSelect }) => {
         }}
         className={selected === i ? "box selected-box" : "box"}
       >
-        {cards[i].title === "Photos" ? (
-          <a href="/photos">{cards[i].title}</a>
-        ) : (
-          cards[i].title
-        )}
+        {cards[i].title}
       </div>
     );
   }

@@ -9,6 +9,9 @@ const AboutMe = () => {
         California. Frequent visitor of hiking trials, animal shelters, and
         javascript meetups. Ask me about my favorite podcasts!
       </div>
+      <a className="box" href="/photos">
+        Photos!
+      </a>
     </div>
   );
 };
