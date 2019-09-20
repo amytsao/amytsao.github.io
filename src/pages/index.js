@@ -14,9 +14,9 @@ const HomeIndex = props => {
   }, [setIndex]);
   const transitions = useTransition(idx, i => i, {
     initial: null,
-    from: { translate: 1000, rotate: 45 },
-    enter: { translate: 0, rotate: 0 },
-    leave: { translate: -1000, rotate: -45 }
+    from: { translate: 1000 },
+    enter: { translate: 0 },
+    leave: { translate: 1000 }
   });
 
   const cards = [
@@ -30,9 +30,13 @@ const HomeIndex = props => {
         <title>Amy Tsao</title>
         <meta name="description" content="Web Developer" />
       </Helmet>
-      <div className="pager">
-        <Pager count={3} selected={idx} onSelect={setIndex} cards={cards} />
-      </div>
+      <Pager
+        count={3}
+        selected={idx}
+        onSelect={setIndex}
+        cards={cards}
+        className="navbar"
+      />
       <div className="card-container" onClick={onClick}>
         {transitions.map(({ item, props, key }) => (
           <Card
@@ -40,9 +44,8 @@ const HomeIndex = props => {
             title={cards[item].title}
             style={{
               transform: interpolate(
-                [props.translate, props.rotate],
-                (t, rot) =>
-                  `translate3d(${t}px,${t}px,${t}px) rotate(${rot}deg)`
+                [props.translate],
+                t => `translate3d(0,${t}px,0)`
               )
             }}
           >

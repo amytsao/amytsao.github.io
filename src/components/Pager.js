@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pager = ({ count, selected, cards, onSelect }) => {
+const Pager = ({ count, selected, cards, onSelect, className }) => {
   let boxes = [];
   for (let i = 0; i < count; i++) {
     boxes.push(
@@ -14,7 +14,7 @@ const Pager = ({ count, selected, cards, onSelect }) => {
       </div>
     );
   }
-  return boxes;
+  return <div className={className}>{boxes}</div>;
 };
 
 export default Pager;

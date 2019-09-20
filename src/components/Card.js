@@ -26,7 +26,6 @@ const Card = ({ children, title, style }) => {
         ...style
       }}
     >
-      <h1>{title}</h1>
       <MyComponent />
     </animated.div>
   );

@@ -5,7 +5,7 @@ import avatar from "../assets/images/avatar.jpg";
 const About = () => {
   return (
     <div className="about">
-      <h2>AMY TSAO</h2>
+      <h2>Amy Tsao</h2>
       <img className="img-profile" src={avatar} alt="" />
       <div>web developer</div>
       <div>foodie</div>

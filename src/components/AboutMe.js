@@ -3,15 +3,20 @@ import React from "react";
 const AboutMe = () => {
   return (
     <div className="about-me">
-      <h2>AMY TSAO</h2>
       <div>
         Came to UCLA for college and then accidentally forgot to leave
         California. Frequent visitor of hiking trials, animal shelters, and
-        javascript meetups. Ask me about my favorite podcasts!
+        javascript meetups.
       </div>
-      <a className="box" href="/photos">
-        Photos!
-      </a>
+      <div>
+        <strong>Podcasts: </strong>99% Invisible, Syntax, The Cut on Tuesdays
+      </div>
+      <div>
+        <strong>Current Music: </strong>Olive Tree, Massive Attack, Vulfpeck
+      </div>
+      <button>
+        <a href="/photos">Photos!</a>
+      </button>
     </div>
   );
 };

@@ -6,8 +6,8 @@ import Footer from "./Footer";
 const Layout = ({ children }) => {
   return (
     <div className="page-container">
-      {children}
       <Footer />
+      {children}
     </div>
   );
 };
