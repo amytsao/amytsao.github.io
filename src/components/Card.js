@@ -2,7 +2,7 @@ import React from "react";
 import { animated } from "react-spring";
 import About from "./About";
 import AboutMe from "./AboutMe";
-import Gallery from "./Gallery";
+import Projects from "./Projects";
 
 const renderElement = el => {
   switch (el) {
@@ -10,8 +10,8 @@ const renderElement = el => {
       return About;
     case "AboutMe":
       return AboutMe;
-    case "Gallery":
-      return Gallery;
+    case "Projects":
+      return Projects;
     default:
       return About;
   }

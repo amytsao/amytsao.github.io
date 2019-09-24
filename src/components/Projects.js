@@ -14,7 +14,7 @@ const DEFAULT_IMAGES = [
     thumbnail: cornerstone,
     caption: "Cornerstone Ondemand",
     description:
-      "Rebuilt site with team with new technologies such as React, Gatsby, Netlify, and Sanity."
+      "Rebuilt site with team with JAMstack (React, Gatsby, Netlify, and Sanity)"
   },
   {
     id: "2",
@@ -49,10 +49,10 @@ const images = DEFAULT_IMAGES.map(
   })
 );
 
-const renderGallery = images => {
+const renderProjects = images => {
   if (!images) return;
 
-  const gallery = images.map((obj, i) => {
+  const projects = images.map((obj, i) => {
     return (
       <a className="image fit thumb work-item" href={obj.source}>
         <img alt="project" src={obj.thumbnail} />
@@ -62,13 +62,13 @@ const renderGallery = images => {
     );
   });
 
-  return <div className="gallery-row">{gallery}</div>;
+  return <div className="gallery-row">{projects}</div>;
 };
 
-const Gallery = () => {
-  return <div>{renderGallery(images)}</div>;
+const Projects = () => {
+  return <div>{renderProjects(images)}</div>;
 };
 
-Gallery.displayName = "Gallery";
+Projects.displayName = "Projects";
 
-export default Gallery;
+export default Projects;

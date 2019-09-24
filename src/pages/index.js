@@ -22,7 +22,7 @@ const HomeIndex = props => {
   const cards = [
     { title: "Hi!", component: "About" },
     { title: "About Me", component: "AboutMe" },
-    { title: "Recent Projects", component: "Gallery" }
+    { title: "Recent Projects", component: "Projects" }
   ];
   return (
     <Layout>

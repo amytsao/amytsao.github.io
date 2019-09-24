@@ -33,7 +33,7 @@ body {
   border-radius: 20px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .navbar .box {
@@ -364,6 +364,10 @@ h6 {
 /* responsive */
 
 @media screen and (max-width: 960px) {
+  .navbar {
+    margin-bottom: 20px;
+  }
+
   .card {
     height: auto;
   }
