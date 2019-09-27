@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { Global, css, jsx } from "@emotion/core";
-import { BrowserRouter as Router } from 'react-router-dom';
 import Header from "./Header";
 import mountains from "../assets/images/SVG/mountains.svg";
 import cloud1 from "../assets/images/SVG/cloud1.svg";
@@ -109,21 +108,19 @@ const childrenCss = css`
 
 const Layout = ({ children }) => {
   return (
-    <Router>
-      <div css={layoutCss}>
-        <Global styles={globalStylesCss} />
-        <Header />
-        <img alt="floating clouds" css={offset1} src={cloud1} />
-        <img alt="floating clouds" css={offset2} src={cloud2} />
-        <img alt="floating clouds" css={offset3} src={cloud3} />
-        <div css={mountainCss}><img alt="mountain" src={mountains} /></div>
-        <img alt="floating clouds" css={offset2} src={cloud2} />
-        <img alt="floating clouds" css={offset1} src={cloud3} />
-        <div css={childrenCss}>
-          {children}
-        </div>
+    <div css={layoutCss}>
+      <Global styles={globalStylesCss} />
+      <Header />
+      <img alt="floating clouds" css={offset1} src={cloud1} />
+      <img alt="floating clouds" css={offset2} src={cloud2} />
+      <img alt="floating clouds" css={offset3} src={cloud3} />
+      <div css={mountainCss}><img alt="mountain" src={mountains} /></div>
+      <img alt="floating clouds" css={offset2} src={cloud2} />
+      <img alt="floating clouds" css={offset1} src={cloud3} />
+      <div css={childrenCss}>
+        {children}
       </div>
-    </Router>
+    </div>
   );
 };
 
