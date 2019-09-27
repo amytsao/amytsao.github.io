@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import resume from "../assets/resume.pdf";
 
 const navCss = css`
@@ -56,14 +57,14 @@ const Header = () => {
       <header>
         <ul css={navCss}>
           <li>
-            <a href="/">
+            <AniLink fade to="/">
               Home
-            </a>
+            </AniLink>
           </li>
           <li>
-            <a href="/about">
+            <AniLink fade to="/about">
               About
-            </a>
+            </AniLink>
           </li>
           <li>
             <a href={resume}>
@@ -71,9 +72,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="/projects">
+            <AniLink fade to="/projects">
               Projects
-            </a>
+            </AniLink>
           </li>
         </ul>
       </header>

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core";
+import Flip from 'react-reveal/Flip';
 import Helmet from "react-helmet";
 import Layout from "../components/layout";
 
@@ -17,7 +18,7 @@ const HomeIndex = props => {
     margin-right: 10px;
     max-width: 130px;
     text-align: right;
-    padding: 10px;
+    padding: 30px 10px;
     font-size: 50px;
     text-transform: uppercase;
 
@@ -33,13 +34,17 @@ const HomeIndex = props => {
         <title>Amy Tsao</title>
         <meta name="description" content="Web Developer" />
       </Helmet>
-      <h1 css={headingCss}>Amy Tsao</h1>
-      <div css={cardCss}>
-        <div>web developer</div>
-        <div>foodie</div>
-        <div>mobile game addict</div>
-        <div>aspiring pun master</div>
-      </div>
+      <Flip top>
+        <h1 css={headingCss}>Amy Tsao</h1>
+      </Flip>
+      <Flip top duration={3000}>
+        <div css={cardCss}>
+          <div>web developer</div>
+          <div>foodie</div>
+          <div>mobile game addict</div>
+          <div>aspiring pun master</div>
+        </div>
+      </Flip>
     </Layout>
   );
 };

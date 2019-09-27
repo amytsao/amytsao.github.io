@@ -7,6 +7,9 @@ var plugins = [{
     },{
       plugin: require('/Users/atsao/Sites/amytsao.github.io/node_modules/gatsby-plugin-offline/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('/Users/atsao/Sites/amytsao.github.io/node_modules/gatsby-plugin-transition-link/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
