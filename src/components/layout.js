@@ -12,6 +12,7 @@ const layoutCss = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 // reset css
@@ -23,6 +24,9 @@ const globalStylesCss = css`
     margin: 0;
     padding: 0;
   }
+  body {
+    overflow: hidden;
+  }
   a {
     color: #333;
   }
@@ -31,14 +35,14 @@ const globalStylesCss = css`
 const cloudsCss = css`
   @keyframes moveleft {
     0% {
-      margin-left: 400px;
+      right: 0;
       opacity: 0;
     }
     50% {
       opacity: 1;
     }
     100% {
-      margin-left: -400px;
+      right: 60%;
       opacity: 0;
     }
   }
@@ -53,7 +57,6 @@ const cloudsCss = css`
 
 const offset1 = css`
   ${cloudsCss};
-  left: 30px;
   bottom: 30px;
   animation-delay: -1s;
 `;
@@ -62,12 +65,12 @@ const offset2 = css`
   ${cloudsCss};
   bottom: 10px;
   max-width: 200px;
+  animation: moveleft 12s linear infinite;
 `;
 
 const offset3 = css`
   ${cloudsCss};
   bottom: 50px;
-  left: 10px;
   margin-left: 50%;
   animation-delay: -2.5s;
 `;
