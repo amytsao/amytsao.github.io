@@ -1,57 +1,44 @@
-import React, { useState, useCallback } from "react";
-import { useTransition, interpolate } from "react-spring";
+/** @jsx jsx */
+import {css, jsx} from "@emotion/core";
 import Helmet from "react-helmet";
-
-import Card from "../components/Card";
-import Pager from "../components/Pager";
 import Layout from "../components/layout";
 
 const HomeIndex = props => {
-  const [idx, setIndex] = useState(0);
-  // const items = [{}, {}, {}];
-  const onClick = useCallback(() => {
-    setIndex(i => (i + 1) % 3);
-  }, [setIndex]);
-  const transitions = useTransition(idx, i => i, {
-    initial: null,
-    from: { translate: 1000 },
-    enter: { translate: 0 },
-    leave: { translate: 1000 }
-  });
+  const cardCss = css`
+    background: rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 30px 20px;
+  `;
 
-  const cards = [
-    { title: "Hi!", component: "About" },
-    { title: "About Me", component: "AboutMe" },
-    { title: "Recent Projects", component: "Projects" }
-  ];
+  const headingCss = css`
+    align-self: center;
+    margin-right: 10px;
+    max-width: 130px;
+    text-align: right;
+    padding: 10px;
+    font-size: 50px;
+    text-transform: uppercase;
+
+    @media (max-width: 450px) {
+      text-align: left;
+      font-size: 30px;
+      max-width: 100%;
+    }
+  `;
   return (
     <Layout>
       <Helmet>
         <title>Amy Tsao</title>
         <meta name="description" content="Web Developer" />
       </Helmet>
-      <Pager
-        count={3}
-        selected={idx}
-        onSelect={setIndex}
-        cards={cards}
-        className="navbar"
-      />
-      <div className="card-container" onClick={onClick}>
-        {transitions.map(({ item, props, key }) => (
-          <Card
-            key={key}
-            title={cards[item].title}
-            style={{
-              transform: interpolate(
-                [props.translate],
-                t => `translate3d(0,${t}px,0)`
-              )
-            }}
-          >
-            {cards[item].component}
-          </Card>
-        ))}
+      <h1 css={headingCss}>Amy Tsao</h1>
+      <div css={cardCss}>
+        <div>web developer</div>
+        <div>foodie</div>
+        <div>mobile game addict</div>
+        <div>aspiring pun master</div>
       </div>
     </Layout>
   );

@@ -1,34 +1,83 @@
-import React from "react";
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core";
+import resume from "../assets/resume.pdf";
 
-import Footer from "./Footer";
-import avatar from "../assets/images/avatar.jpg";
+const navCss = css`
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  padding: 20px;
+  cursor: pointer;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-class Header extends React.Component {
-  render() {
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: #4baea0;
+    padding-bottom: 10px;
+    text-decoration: none;
+
+    &:after {
+      border-bottom: solid 3px #4baea0;  
+      content: '';
+      display: block;
+      padding-bottom: 10px;
+      transform: scaleX(0);  
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    top: 0;
+    right: 0;
+    width: auto;
+    padding: 0;
+
+    li {
+      padding: 5px;
+    }
+  }
+`;
+
+const Header = () => {
     return (
-      <header className="navbar">
-        <div className="navbar-brand">
-          <h2>Amy Tsao</h2>
-          <div>
-            <img className="img-profile" src={avatar} alt="" />
-          </div>
-        </div>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" href="#About">
+      <header>
+        <ul css={navCss}>
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/about">
               About
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#projects">
+          <li>
+            <a href={resume}>
+              Resume
+            </a>
+          </li>
+          <li>
+            <a href="/projects">
               Projects
             </a>
           </li>
         </ul>
-        <Footer />
       </header>
     );
-  }
 }
 
 export default Header;

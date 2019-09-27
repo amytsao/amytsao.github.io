@@ -1,32 +1,28 @@
-import React from "react";
 import { animated } from "react-spring";
-import About from "./About";
-import AboutMe from "./AboutMe";
-import Projects from "./Projects";
+/** @jsx jsx */
+import {css, jsx} from "@emotion/core";
 
-const renderElement = el => {
-  switch (el) {
-    case "About":
-      return About;
-    case "AboutMe":
-      return AboutMe;
-    case "Projects":
-      return Projects;
-    default:
-      return About;
+const cardCss = css`
+  padding: 0 20px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+
+  @media(max-width: 820px) {
+    margin: 0 auto;
+    position: unset;
   }
-};
+`;
 
-const Card = ({ children, title, style }) => {
-  const MyComponent = renderElement(children);
+const Card = ({ children, style }) => {
   return (
     <animated.div
-      className="card"
+      css={cardCss}
       style={{
         ...style
       }}
     >
-      <MyComponent />
+      {children}
     </animated.div>
   );
 };
