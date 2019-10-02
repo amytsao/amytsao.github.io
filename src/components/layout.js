@@ -13,12 +13,16 @@ const layoutCss = css`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  background: linear-gradient(363deg, #297591 19%, #101);
+    color: #ddd;
 `;
 
 // reset css
 const globalStylesCss = css`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
   * {
+    color: #fff;
     font-family: 'Roboto';
     font-weight: 300;
     margin: 0;
@@ -84,8 +88,9 @@ const mountainCss = css`
 
   img {
     position: relative;
-    bottom: -50px;
+    bottom: -20px;
     left: 140px;
+    max-height: 70vh;
   }
 
   @media (max-width: 450px) {
@@ -109,10 +114,43 @@ const childrenCss = css`
   }
 `;
 
+const starsCss = css`
+  @keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  > div {
+    animation: blink 5s ease-in infinite;
+
+    &:nth-child(3n) {
+      animation-delay: 2.1s;
+    }
+    &:nth-child(3n) {
+      animation-delay: 1.1s;
+    }
+  }
+`;
+
+const generateStars = () => {
+  let stars = [];
+  for(let i = 0; i < 20; i++) {
+    stars.push(<div css={css`
+      color: #fff;
+      font-size: ${Math.random() * 50 + 10}px;
+      position: absolute;
+      top: ${Math.random() * 60 + 10}vh;
+      left: ${Math.random() * 100}vw;
+    `}>.</div>);
+  }
+  return <div css={starsCss}>{stars}</div>;
+}
+
 const Layout = ({ children }) => {
   return (
     <div css={layoutCss}>
       <Global styles={globalStylesCss} />
+      {generateStars()}
       <Header />
       <img alt="floating clouds" css={offset1} src={cloud1} />
       <img alt="floating clouds" css={offset2} src={cloud2} />

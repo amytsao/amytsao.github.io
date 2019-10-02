@@ -9,8 +9,11 @@ const cardCss = css`
   left: 30%;
 
   @media(max-width: 820px) {
-    margin: 0 auto;
-    position: unset;
+    margin: 20px auto;
+    top: auto;
+    left: auto;
+    padding-left: 0;
+    max-width: 230px;
   }
 `;
 

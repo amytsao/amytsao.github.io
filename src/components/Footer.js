@@ -24,7 +24,7 @@ const socialIcons = css`
     display: inline-block;
     height: 2.5rem;
     width: 2.5rem;
-    color: #53a7ea;
+    color: #f1f0cf;
     border-radius: 100%;
     text-align: center;
     font-size: 1.5rem;
