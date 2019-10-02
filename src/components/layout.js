@@ -126,7 +126,7 @@ const starsCss = css`
     &:nth-child(3n) {
       animation-delay: 2.1s;
     }
-    &:nth-child(3n) {
+    &:nth-child(2n) {
       animation-delay: 1.1s;
     }
   }
@@ -139,7 +139,7 @@ const generateStars = () => {
       color: #fff;
       font-size: ${Math.random() * 50 + 10}px;
       position: absolute;
-      top: ${Math.random() * 60 + 10}vh;
+      top: ${Math.random() * 60 + 4}vh;
       left: ${Math.random() * 100}vw;
     `}>.</div>);
   }
