@@ -15,7 +15,11 @@ const layoutCss = css`
   overflow: hidden;
 
   background: linear-gradient(363deg, #297591 19%, #101);
-    color: #ddd;
+  color: #ddd;
+
+  @media(max-width: 450px) {
+    min-height: 50vh;
+  }
 `;
 
 // reset css

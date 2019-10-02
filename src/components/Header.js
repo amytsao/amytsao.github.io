@@ -41,14 +41,47 @@ const navCss = css`
       }
     }
   }
-  @media (max-width: 450px) {
+
+  @media (max-width: 550px) {
+    z-index: 3;
+    li {
+      padding: 10px;
+    }
   }
 `;
 
 const mobileMenuCss = css`
   display: none;
-  width: 40px;
-  height: 40px;
+  perspective: 40px;
+  width: 24px;
+  height: 24px;
+
+  @media(max-width: 550px) {
+    display: block;
+    position: absolute;
+    top: 3.5%;
+    right: 10%;
+
+    &.closed + ul {
+      display: block;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
+
+    &.open + ul {
+      background: #000;
+      display: block;
+      transform: scaleX(1);
+    }
+  }
+`;
+
+const innerMobileCss = css`
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 1px;
+  transition: background-color 0s 0.13s linear;
 
   &::before,
   &::after {
@@ -58,7 +91,7 @@ const mobileMenuCss = css`
     background: #fff;
     border-radius: 1px;
     content: '';
-    transition: transform 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
   }
 
   &::before {
@@ -72,12 +105,9 @@ const mobileMenuCss = css`
   }
 
   @media(max-width: 550px) {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 10%;
-
     &.open {
+      background: transparent;
+      
       &::before {
         transform: translateY(-340%) rotate(45deg);
       }
@@ -85,15 +115,6 @@ const mobileMenuCss = css`
       &::after {
         transform: translateY(100%) rotate(-45deg);
       }
-    }
-
-    &.closed + ul {
-      display: none;
-    }
-
-    &.open + ul {
-      background: #000;
-      display: block;
     }
   }
 `;
@@ -108,7 +129,9 @@ const Header = () => {
 
   return (
     <header>
-      <div onClick={toggleMobileMenu} className={menuState ? 'open' : 'closed'} css={mobileMenuCss}></div>
+      <div className={menuState ? 'open' : 'closed'} css={mobileMenuCss} onClick={toggleMobileMenu}>
+        <div className={menuState ? 'open' : 'closed'} css={innerMobileCss}></div>
+      </div>
       <ul css={navCss}>
         <li>
           <AniLink fade to="/">
