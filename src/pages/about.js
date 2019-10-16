@@ -19,21 +19,22 @@ const About = () => {
       font-weight: 600;
     }
   `;
-  
+
   return (
     <Layout>
       <Flip top duration={3000}>
         <div css={cardCss}>
           <div>
             Came to UCLA for college and then accidentally forgot to leave
-            California. Frequent visitor of hiking trials, animal shelters, and
+            California. Frequent visitor of hiking trails, animal shelters, and
             javascript meetups.
           </div>
           <div>
-            <strong>Podcasts: </strong>99% Invisible, Syntax, The Cut on Tuesdays
+            <strong>Podcasts: </strong>99% Invisible, Syntax, The Cut on
+            Tuesdays
           </div>
           <div>
-            <strong>Current Music: </strong>Olive Tree, Massive Attack, Vulfpeck
+            <strong>Current Music: </strong>Autoheart, Mindy Gledhill, Vulfpeck
           </div>
           <Footer />
         </div>
